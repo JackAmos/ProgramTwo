@@ -45,15 +45,12 @@ def print_coordinates(filename):
 				n[index] = "*"
 				index+=1
 			index = x_point
-
-	row_index = 0
-	column_index = 0
-
+		
 	#draw line
-	while index <= dimension:
-		if (implicit[0]*row_index+implicit[1]*column_index+implicit[2]) == 0:
-			screen[row_index][column_index] = "*"
-
+	for n in screen:
+		for i in n:
+			if (implicit[0]*screen.index(n)+implicit[1]*n.index(i)+implicit[2]) == 0:
+				screen[screen.index(n)][n.index(i)] = "*"
 
 
 	row = 0
@@ -95,6 +92,8 @@ def get_implicit(coord_values):
 	implicit_values.append(-1*(coord_values[6]*coord_values[3]+(-1*coord_values[5]*coord_values[4])))
 
 	return implicit_values
+
+
 
 
 print_coordinates("exfile.txt")
