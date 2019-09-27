@@ -77,7 +77,6 @@ def print_coordinates(filename):
 
 	#make actual box
 	for n in screen:
-		print(screen.index(n))
 		if screen.index(n) in r1:
 			n[x_point] = "*"
 			n[x_point+coord_values[2]] = "*"
@@ -90,7 +89,7 @@ def print_coordinates(filename):
 	#draw line
 	for n in screen:
 		for i in n:
-			if (implicit[0]*screen.index(n)+implicit[1]*n.index(i)+implicit[2]) == 0:
+			if (implicit[0]*(screen.index(n)-20)+implicit[1]*(n.index(i)+20)+implicit[2]) == 0:
 				screen[screen.index(n)][n.index(i)] = "*"
 
 
